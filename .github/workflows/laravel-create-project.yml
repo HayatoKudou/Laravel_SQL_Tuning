@@ -1,53 +1,53 @@
-# name: laravel-create-project
+name: laravel-create-project
 
-# on:
-#   pull_request:
-#   schedule:
-#     - cron:  '0 0 * * *'
+on:
+  pull_request:
+  schedule:
+    - cron:  '0 0 * * *'
 
-# jobs:
-#   docker-build:
-#     runs-on: ubuntu-latest
+jobs:
+  docker-build:
+    runs-on: ubuntu-latest
 
-#     steps:
-#       - uses: actions/checkout@v2
+    # steps:
+    #   - uses: actions/checkout@v2
 
-#       - name: Docker Version
-#         run: docker version
+    #   - name: Docker Version
+    #     run: docker version
 
-#       - name: Build Docker Images
-#         run: docker-compose build
+    #   - name: Build Docker Images
+    #     run: docker-compose build
 
-#       - name: Create & Start Docker Containers
-#         run: |
-#           mkdir backend
-#           docker-compose up -d
+    #   - name: Create & Start Docker Containers
+    #     run: |
+    #       mkdir backend
+    #       docker-compose up -d
 
-#       - name: OS Version
-#         run: |
-#           docker-compose exec -T app cat /etc/os-release
-#           docker-compose exec -T app cat /etc/debian_version
+    #   - name: OS Version
+    #     run: |
+    #       docker-compose exec -T app cat /etc/os-release
+    #       docker-compose exec -T app cat /etc/debian_version
 
-#       - name: PHP Version
-#         run: docker-compose exec -T app php --version
+    #   - name: PHP Version
+    #     run: docker-compose exec -T app php --version
 
-#       - name: Composer Version
-#         run: docker-compose exec -T app composer --version
+    #   - name: Composer Version
+    #     run: docker-compose exec -T app composer --version
 
-#       - name: Create Laravel Project
-#         run: docker-compose exec -T app composer create-project --prefer-dist laravel/laravel .
+    #   - name: Create Laravel Project
+    #     run: docker-compose exec -T app composer create-project --prefer-dist laravel/laravel .
 
-#       - name: Laravel Version
-#         run: docker-compose exec -T app php artisan --version
+    #   - name: Laravel Version
+    #     run: docker-compose exec -T app php artisan --version
 
-#       - name: Laravel Migrate Testing
-#         run: docker-compose exec -T app php artisan migrate
+    #   - name: Laravel Migrate Testing
+    #     run: docker-compose exec -T app php artisan migrate
 
-#       - name: Laravel Rollback Testing
-#         run: docker-compose exec -T app php artisan migrate:refresh
+    #   - name: Laravel Rollback Testing
+    #     run: docker-compose exec -T app php artisan migrate:refresh
 
-#       - name: Laravel Seeding Testing
-#         run: docker-compose exec -T app php artisan db:seed
+    #   - name: Laravel Seeding Testing
+    #     run: docker-compose exec -T app php artisan db:seed
 
-#       - name: Laravel PHPUnit Testing
-#         run: docker-compose exec -T app php artisan test
+    #   - name: Laravel PHPUnit Testing
+    #     run: docker-compose exec -T app php artisan test
